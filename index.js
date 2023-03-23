@@ -34,6 +34,8 @@ app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
 app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
+app.use("/businesspay", require("./routes/businesspay"));
+
 
 
 app.listen(8081, ()=>{
