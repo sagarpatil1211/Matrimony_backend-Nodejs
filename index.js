@@ -35,7 +35,7 @@ app.use("/states", require("./routes/states"));
 app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
 app.use("/busenesses", require("./routes/busenesses"));
-// app.use("/businesspay", require("./routes/businesspay"));
+app.use("/businesspay", require("./routes/businesspay"));
 
 
 
