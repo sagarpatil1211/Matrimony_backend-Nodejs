@@ -34,8 +34,11 @@ app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
 app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
+app.use("/businessplans", require("./routes/businessplans"));
 
 
 app.listen(8081, ()=>{
     console.log("API running on http://localhost:8081");
 })
+
+
