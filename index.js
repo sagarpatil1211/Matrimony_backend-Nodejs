@@ -2,9 +2,8 @@ let express = require("express");
 let bodyparser = require("body-parser");
 let mongoose = require("mongoose");
 
-
 let app = express();
-
+app.use(express.static("assets"));
 app.use(bodyparser.json({limit : '50mb'})) ;
 app.use(bodyparser.urlencoded({limit:'50mb', extended: true}))
 app.use(express.json());
@@ -34,7 +33,7 @@ app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
 app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
-app.use("/busenesses", require("./routes/busenesses"));
+app.use("/busenesses", require("./routes/businesses"));
 app.use("/businesspay", require("./routes/businesspay"));
 
 
