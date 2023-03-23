@@ -33,6 +33,7 @@ app.get("/", (req,res)=>{
 app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
 app.use("/districts", require("./routes/districts"));
+app.use("/profiles", require("./routes/profiles"))
 app.use("/login", require("./routes/login"));
 
 
