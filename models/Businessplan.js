@@ -4,7 +4,7 @@ let Schema = mongoose.Schema;
 
 let schema = new Schema(
     {        
-        businessid : { type : Schema.Types.ObjectId, ref : "businesses" },
+        // businessid : { type : Schema.Types.ObjectId, ref : "business" },
         planname: {type:String , required:true},
         amount: {type:String , required:true},
         duration: {type:String , required:true},
