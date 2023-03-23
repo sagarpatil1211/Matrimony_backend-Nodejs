@@ -28,7 +28,7 @@ router.put("/:id",(req,res)=>{
 })
 
 router.get("/",(req,res)=>{
-    Businessplan.find().sort({name:1}).then(result =>{
+    Businessplan.find().populate({path : "businessid"}).sort({name:1}).then(result =>{
         if(result.length > 0){
             res.end(JSON.stringify({status:"success",data:result}));
         }

@@ -31,8 +31,12 @@ app.get("/", (req,res)=>{
 
 app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
-app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
+app.use("/businesses", require("./routes/businesses"));
+app.use("/businesspay", require("./routes/businesspay"));
+app.use("/plans", require("./routes/plans"));
+app.use("/businessplans", require("./routes/businessplans"));
+
 
 
 app.listen(8081, ()=>{
