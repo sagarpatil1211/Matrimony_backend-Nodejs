@@ -3,6 +3,7 @@ let Schema = mongoose.Schema;
 
 let schema = new Schema(
     {
+        name : { type : String , required : true },   
         username : { type : String , required : true },
         email : { type : String , required : true, unique : true},
         mobileno : { type : String , required : true, unique : true},

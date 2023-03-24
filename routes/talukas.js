@@ -51,6 +51,24 @@ router.delete("/:id", (req,res)=>{
         res.end(JSON.stringify({status : "success", data : result}));
     }).catch(err=>{
         res.end(JSON.stringify({status : "failed", data : "Record not found"}));        
+
+    })
+})
+router.post("/",(req,res)=>{
+    let body = req.body;
+    let taluka = new Taluka(body);
+    taluka.save().then((result)=>{
+        res.end(JSON.stringify({status:"success", data:result}));
+    },(err)=>{
+        res.end(JSON.stringify({status:"failed", data:err}))
+    });
+});
+
+router.get("/",(req,res)=>{
+    Taluka.find({}).sort({name:1}).then((result)=>{
+        res.end(JSON.stringify({status:"success", data:result}));
+    },(err)=>{
+        res.end(JSON.stringify({status:"failed", data:err}));
     })
 })
 
@@ -66,14 +84,12 @@ router.post("/town", (req, res)=>{
 });
 
 router.get("/town/:talukaid", (req, res)=>{
-    Town.find({talukaid:req.params.talukasid}).then((result)=>{
     Town.find({talukaid:req.params.talukaid}).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
     },(err)=>{
         res.end(JSON.stringify({status:"failed", data:err}));
     })
 });
-})
 
 router.delete("/town/:id", (req, res)=>{
     Town.findByIdAndDelete(req.params.id).then((result)=>{
@@ -82,7 +98,6 @@ router.delete("/town/:id", (req, res)=>{
         res.end(JSON.stringify({status:"failed", data:err}));
     })
 });
-
 
 
 module.exports = router;
