@@ -3,10 +3,10 @@ let Schema = mongoose.Schema;
 
 let schema = new Schema(
     {
-        name : { type : String, required : true, unique : true}
+        name:{type:String, required:true},
+        
     }
 )
 
-let State = mongoose.model("states", schema);
-
+let State = mongoose.model("states",schema);
 module.exports = State;

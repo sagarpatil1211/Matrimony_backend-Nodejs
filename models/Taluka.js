@@ -4,10 +4,10 @@ let Schema = mongoose.Schema;
 let schema = new Schema(
     {
         name:{type:String, required:true},
-        stateid:{type:Schema.Types.ObjectId, ref:"states"},
+        districtid:{type:Schema.Types.ObjectId, ref:"district"},
         
     }
 )
 
-let District = mongoose.model("districts",schema);
-module.exports = District;
+let Taluka = mongoose.model("talukas",schema);
+module.exports = Taluka;
