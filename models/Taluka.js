@@ -3,11 +3,12 @@ let Schema = mongoose.Schema;
 
 let schema = new Schema(
     {
-        name:{type:String, required:true},
-        districtid:{type:Schema.Types.ObjectId, ref:"district"},
-        
+        name : { type : String, required : true},
+        districtid : { type:Schema.Types.ObjectId, ref:"districts"},
     }
 )
 
-let Taluka = mongoose.model("talukas",schema);
+let Taluka = mongoose.model("talukas", schema);
+
+
 module.exports = Taluka;
