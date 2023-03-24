@@ -2,9 +2,8 @@ let express = require("express");
 let bodyparser = require("body-parser");
 let mongoose = require("mongoose");
 
-
 let app = express();
-
+app.use(express.static("assets"));
 app.use(bodyparser.json({limit : '50mb'})) ;
 app.use(bodyparser.urlencoded({limit:'50mb', extended: true}))
 app.use(express.json());
@@ -31,12 +30,11 @@ app.get("/", (req,res)=>{
 })
 
 app.use("/admins", require("./routes/admins"));
-app.use("/states", require("./routes/states"));
-app.use("/districts", require("./routes/districts"));
 app.use("/login", require("./routes/login"));
-app.use("/talukas", require("./routes/talukas"));
 
 
 app.listen(8081, ()=>{
     console.log("API running on http://localhost:8081");
 })
+
+
