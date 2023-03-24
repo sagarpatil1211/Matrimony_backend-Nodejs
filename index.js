@@ -38,6 +38,8 @@ app.use("/businesses", require("./routes/businesses"));
 app.use("/businesspay", require("./routes/businesspay"));
 app.use("/plans", require("./routes/plans"));
 app.use("/businessplans", require("./routes/businessplans"));
+app.use("/relations", require("./routes/relations"));
+app.use("/religions", require("./routes/religions"));
 
 
 
