@@ -12,7 +12,7 @@ let schema = new Schema(
         mobileno : { type : String, required : true, unique : true},
         password : { type : String, required : true},
         website : { type : String, required : true},
-        logopath : { type : String },
+        logopath : { type : String  },
         accountopeningdate : { type : Date, required : true},
         accountexpdate : { type : Date},
         status : { type : Boolean, required : true},
