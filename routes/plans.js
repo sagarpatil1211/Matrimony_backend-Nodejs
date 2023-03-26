@@ -5,7 +5,6 @@ let router = express.Router();
 
 router.post("/",(req,res)=>{
     let body = req.body;
-    // console.log(body)
 
     let object = new Plan(body);
     object.save().then(result=>{
