@@ -49,7 +49,7 @@ router.post("/", (req,res)=>{
 
 router.put("/:id", (req,res)=>{
     let id = req.params.id;
-    console.log(id);
+    // console.log(id);
     let body = req.body;
 
     let object = new Object();
@@ -81,10 +81,8 @@ router.put("/:id", (req,res)=>{
  
     // console.log(object);
     Business.findByIdAndUpdate(id,object).then(result=>{
-        console.log(result);
         res.end(JSON.stringify({status : "success", data : result}));
     }).catch(err=>{
-        console.log(err);
 
         res.end(JSON.stringify({status : "failed", data : err}));        
     })
