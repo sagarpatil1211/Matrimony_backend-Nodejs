@@ -12,6 +12,6 @@ let schema = new Schema(
     }
 )
 
-let Admin = mongoose.model("admins",schema);
+let Admin = mongoose.model("admins", schema);
 
 module.exports = Admin;
