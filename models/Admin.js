@@ -3,8 +3,8 @@ let Schema = mongoose.Schema;
 
 let schema = new Schema(
     {
-        name : { type : String , required : true },   
-        username : { type : String , required : true },
+        name : { type : String , required : true, unique:true },   
+        username : { type : String , required : true, unique:true },
         email : { type : String , required : true, unique : true},
         mobileno : { type : String , required : true, unique : true},
         password : { type : String , required : true },
@@ -12,6 +12,6 @@ let schema = new Schema(
     }
 )
 
-let Admin = mongoose.model("admins",schema);
+let Admin = mongoose.model("admins", schema);
 
 module.exports = Admin;

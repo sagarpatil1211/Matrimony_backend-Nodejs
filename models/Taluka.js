@@ -10,4 +10,5 @@ let schema = new Schema(
 
 let Taluka = mongoose.model("talukas", schema);
 
+
 module.exports = Taluka;

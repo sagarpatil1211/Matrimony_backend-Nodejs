@@ -31,14 +31,13 @@ app.get("/", (req, res) => {
 
 app.use("/admins", require("./routes/admins"));
 app.use("/states", require("./routes/states"));
-app.use("/districts", require("./routes/districts"));   
+app.use("/districts", require("./routes/districts"));
 app.use("/talukas", require("./routes/talukas"));
 app.use("/profiles", require("./routes/profiles"));
 app.use("/login", require("./routes/login"));
 app.use("/plans", require("./routes/plans"));
 app.use("/businesses", require("./routes/businesses"));
 app.use("/businesspay", require("./routes/businesspay"));
-app.use("/plans", require("./routes/plans"));
 app.use("/businessplans", require("./routes/businessplans"));
 app.use("/relations", require("./routes/relations"));
 app.use("/religions", require("./routes/religions"));

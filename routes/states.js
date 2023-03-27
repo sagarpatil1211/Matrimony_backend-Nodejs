@@ -32,6 +32,7 @@ router.get("/:id",(req,res)=>{
 });
 
 router.put("/:id",(req,res)=>{
+    
     let body = req.body;
     State.findByIdAndUpdate(req.params.id, body).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
@@ -56,14 +57,34 @@ router.post("/district", (req, res)=>{
         res.end(JSON.stringify({status:"failed", data:err}))
     })
 });
+// router.put("/district/:id", (req, res)=>{
+//     let id = req.params.id
+//     let body = req.body;
+//     console.log(id);
+//     console.log(body);
+//     // let district = new District(req.body);
+//     District.findByIdAndUpdate(id,body).then((result)=>{
+//         res.end(JSON.stringify({status:"success", data:result}))
+//     },(err)=>{
+//         res.end(JSON.stringify({status:"failed", data:err}))
+//     })
+// });
 
 router.get("/district/:statesid", (req, res)=>{
-    District.find({stateid:req.params.statesid}).then((result)=>{
+    District.find({stateid:req.params.statesid}).sort({name:1}).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
     },(err)=>{
         res.end(JSON.stringify({status:"failed", data:err}));
     })
 });
+
+// router.get("/district/:id", (req, res)=>{
+//     District.findById(id).then((result)=>{
+//         res.end(JSON.stringify({status:"success", data:result}));
+//     },(err)=>{
+//         res.end(JSON.stringify({status:"failed", data:err}));
+//     })
+// });
 
 router.delete("/district/:id", (req, res)=>{
     District.findByIdAndDelete(req.params.id).then((result)=>{
