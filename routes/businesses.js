@@ -66,7 +66,7 @@ router.put("/:id", (req,res)=>{
     object.accountexpdate = body.accountexpdate;
     object.status = body.status;
     
-    // let logo = body.logopath;
+     let logo = body.logopath;
     // console.log(logo.includes("png"));
     if(logo.includes("png") == true){
         object.logopath = body.logopath;
