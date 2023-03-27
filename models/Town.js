@@ -8,8 +8,6 @@ let schema = new Schema(
         talukaid:{type:Schema.Types.ObjectId, ref:"talukas"},
         
 
-        name : { type : String, required : true},
-        talukaid : { type:Schema.Types.ObjectId, ref:"talukas"},
     }
 )
 
