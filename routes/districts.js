@@ -22,6 +22,21 @@ router.get("/",(req,res)=>{
     })
 });
 
+// router.get("/:stateid",(req,res)=>{
+//     District.find({stateid:req.params.stateid}).sort({name:1}).then((result)=>{
+//         res.end(JSON.stringify({status:"success", data:result}));
+//     },(err)=>{
+//         res.end(JSON.stringify({status:"failed", data:err}));
+//     })
+// });
+// router.get("/:stateid/:id",(req,res)=>{
+//     District.findById(req.params.id).sort({name:1}).then((result)=>{
+//         res.end(JSON.stringify({status:"success", data:result}));
+//     },(err)=>{
+//         res.end(JSON.stringify({status:"failed", data:err}));
+//     })
+// });
+
 router.get("/:id",(req,res)=>{
     District.findById(req.params.id).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
@@ -57,7 +72,7 @@ router.post("/taluka", (req, res)=>{
 });
 
 router.get("/taluka/:districtid", (req, res)=>{
-    Taluka.find({districtid:req.params.districtid}).then((result)=>{
+    Taluka.find({districtid:req.params.districtid}).sort({name:1}).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
     },(err)=>{
         res.end(JSON.stringify({status:"failed", data:err}));

@@ -84,7 +84,7 @@ router.post("/town", (req, res)=>{
 });
 
 router.get("/town/:talukaid", (req, res)=>{
-    Town.find({talukaid:req.params.talukaid}).then((result)=>{
+    Town.find({talukaid:req.params.talukaid}).sort({name:1}).then((result)=>{
         res.end(JSON.stringify({status:"success", data:result}));
     },(err)=>{
         res.end(JSON.stringify({status:"failed", data:err}));
