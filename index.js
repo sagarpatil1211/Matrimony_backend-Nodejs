@@ -41,6 +41,7 @@ app.use("/businesspay", require("./routes/businesspay"));
 app.use("/businessplans", require("./routes/businessplans"));
 app.use("/relations", require("./routes/relations"));
 app.use("/religions", require("./routes/religions"));
+app.use("/sendmails", require("./routes/sendmails"));
 
 app.listen(8081, () => {
     console.log("API running on http://localhost:8081");
